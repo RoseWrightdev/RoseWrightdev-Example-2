@@ -11,6 +11,8 @@ body {
 
   span {
     position: fixed;
+    width: 100vw;
+    height: 100vh;
   }
   
   *::-webkit-scrollbar {
