@@ -1,0 +1,38 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background: white;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+
+  }
+
+  span {
+    position: fixed;
+  }
+  
+  *::-webkit-scrollbar {
+    width: 1vw;
+  }
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 3vw;
+  }
+  *::-webkit-scrollbar-button {
+    background: transparent;
+  }
+
+  p{
+    padding: 1vw;
+    margin: 3vw;
+    background-color: #f2f2f2;
+    font-size: 2.5vh;
+    width: 90%;
+    font-family: monospace;
+    overflow-x: scroll;
+}
