@@ -1,6 +1,5 @@
 body {
-    width: 100vw;
-    height: 100vh;
+    width: auto;
     position: absolute;
     background: white;
     margin: 0;
@@ -11,8 +10,6 @@ body {
 
   span {
     position: fixed;
-    width: 100vw;
-    height: 100vh;
   }
   
   *::-webkit-scrollbar {
