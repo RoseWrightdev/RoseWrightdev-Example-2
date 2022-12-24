@@ -80,12 +80,12 @@ class WorldView {
     const near = 1.0;
     const far = 1000.0;
     this.camera_ = new THREE.PerspectiveCamera(fov, aspect, near, far);
-    this.camera_.position.set(75, 100, 75);
+    this.camera_.position.set(25, 50, 25);
 
     this.scene_ = new THREE.Scene();
 
     //DirectionalLight setup
-    let light = new THREE.DirectionalLight(0xFFFFFF, 1.0);
+    let light = new THREE.DirectionalLight(0xFBFBFC, 1.0);
     light.position.set(20, 100, 10);
     light.target.position.set(0, 0, 0);
         //shadow setup
@@ -102,11 +102,11 @@ class WorldView {
     this.scene_.add(light);
 
     //AmbientLight setup
-    light = new THREE.AmbientLight(0x101010);
+    light = new THREE.AmbientLight(0x2F2E41);
     this.scene_.add(light);
 
     //fog setup
-    this.scene_.fog = new THREE.Fog( 0xFFFFFF, 100, 1000)
+    this.scene_.fog = new THREE.Fog( 0xFBFBFC, 100, 1000)
     
     //Orbit controlls
     const controls = new OrbitControls(
@@ -115,12 +115,12 @@ class WorldView {
     controls.update();
 
     // baby blue "sky"
-    this.scene_.background = new THREE.Color( 0xFFFFFF );
+    this.scene_.background = new THREE.Color( 0xFBFBFC );
 
     //ground graphics
     const ground = new THREE.Mesh(
       new THREE.BoxGeometry(5000, 1, 5000),
-      new THREE.MeshStandardMaterial({color: 0x404040}));
+      new THREE.MeshStandardMaterial({color: 0x2F2E41}));
     ground.castShadow = false;
     ground.receiveShadow = true;
 
@@ -128,10 +128,9 @@ class WorldView {
     let textureLoader = new THREE.TextureLoader();
     //adds ground texture to the ground
     textureLoader.load( 'textures/grid.png', function ( texture ) {
-
       texture.wrapS = THREE.RepeatWrapping;
       texture.wrapT = THREE.RepeatWrapping;
-      texture.repeat.set( 1000, 1000 );
+      texture.repeat.set( 500, 500 );
       ground.material.map = texture;
       ground.material.needsUpdate = true;
 
@@ -152,7 +151,7 @@ class WorldView {
     //creates box graphics
     const box = new THREE.Mesh(
     new THREE.BoxGeometry(5, 5, 5),
-    new THREE.MeshStandardMaterial({color: 0xff00ff}));
+    new THREE.MeshStandardMaterial({color: 0xBA63FF}));
     box.position.set(1, 50, 1);
     box.castShadow = true;
     box.receiveShadow = true;
@@ -161,7 +160,7 @@ class WorldView {
 
     //creates box rigid body
     const rbBox = new RigidBody();
-    rbBox.createBox(1, box.position, box.quaternion, new THREE.Vector3(5, 5, 5));
+    rbBox.createBox(1, box.position, box.quaternion, new THREE.Vector3(10, 10, 10));
     rbBox.setRestitution(1);
     rbBox.setFriction(1);
     rbBox.setRollingFriction(5);
@@ -171,7 +170,7 @@ class WorldView {
            //creates box graphics
     const box2 = new THREE.Mesh(
       new THREE.BoxGeometry(5, 5, 5),
-      new THREE.MeshStandardMaterial({color: 0xff0000}));
+      new THREE.MeshStandardMaterial({color: 0x63A8FF}));
       box2.position.set(0, 0, 0);
       box2.castShadow = true;
       box2.receiveShadow = true;
@@ -189,7 +188,7 @@ class WorldView {
 
     const box3 = new THREE.Mesh(
       new THREE.BoxGeometry(5, 5, 5),
-      new THREE.MeshStandardMaterial({color: 0xffff00}));
+      new THREE.MeshStandardMaterial({color: 0xFF68D0}));
       box3.position.set(0, 10, 0);
       box3.castShadow = true;
       box3.receiveShadow = true;
@@ -208,12 +207,12 @@ class WorldView {
 
     const box4 = new THREE.Mesh(
       new THREE.BoxGeometry(5, 5, 5),
-      new THREE.MeshStandardMaterial({color: 0x00ff00}));
+      new THREE.MeshStandardMaterial({color: 0xFF9868}));
       box4.position.set(0, 10, 0);
       box4.castShadow = true;
       box4.receiveShadow = true;
       //adds to world
-     this.scene_.add(box4);
+      this.scene_.add(box4);
         
        //creates box rigid body
     const rbBox4 = new RigidBody();
@@ -227,7 +226,7 @@ class WorldView {
 
     const box5 = new THREE.Mesh(
       new THREE.BoxGeometry(5, 5, 5),
-      new THREE.MeshStandardMaterial({color: 0x0000ff}));
+      new THREE.MeshStandardMaterial({color: 0x6C63FF}));
       box5.position.set(0, 10, 0);
       box5.castShadow = true;
       box5.receiveShadow = true;
@@ -247,7 +246,7 @@ class WorldView {
        //creates box graphics
     const box6 = new THREE.Mesh(
       new THREE.BoxGeometry(5, 5, 5),
-      new THREE.MeshStandardMaterial({color: 0xff0000}));
+      new THREE.MeshStandardMaterial({color: 0xFF6884}));
       box6.position.set(0, 0, 0);
       box6.castShadow = true;
       box6.receiveShadow = true;
@@ -265,7 +264,7 @@ class WorldView {
 
     const box7 = new THREE.Mesh(
       new THREE.BoxGeometry(5, 5, 5),
-      new THREE.MeshStandardMaterial({color: 0xffff00}));
+      new THREE.MeshStandardMaterial({color: 0xFFE468}));
       box7.position.set(0, 10, 0);
       box7.castShadow = true;
       box7.receiveShadow = true;
@@ -284,7 +283,7 @@ class WorldView {
 
     const box8 = new THREE.Mesh(
       new THREE.BoxGeometry(5, 5, 5),
-      new THREE.MeshStandardMaterial({color: 0x00ff00}));
+      new THREE.MeshStandardMaterial({color: 0x83ff68}));
       box8.position.set(0, 10, 0);
       box8.castShadow = true;
       box8.receiveShadow = true;
@@ -303,7 +302,7 @@ class WorldView {
 
     const box9 = new THREE.Mesh(
       new THREE.BoxGeometry(5, 5, 5),
-      new THREE.MeshStandardMaterial({color: 0x0000ff}));
+      new THREE.MeshStandardMaterial({color: 0x9968FF}));
       box9.position.set(0, 10, 0);
       box9.castShadow = true;
       box9.receiveShadow = true;
