@@ -120,7 +120,7 @@ class WorldView {
     //ground graphics
     const ground = new THREE.Mesh(
       new THREE.BoxGeometry(5000, 1, 5000),
-      new THREE.MeshStandardMaterial({color: 0x2F2E41}));
+      new THREE.MeshStandardMaterial({color: 0xFBFBFC}));
     ground.castShadow = false;
     ground.receiveShadow = true;
 
